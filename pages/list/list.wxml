@@ -19,9 +19,9 @@
 </swiper>
 <!--遍历模板-->
 <block wx:for="{{listArr}}" wx:key="{{index}}">
-
     <!--使用模板，将数据传给模板页面-->
-    <template is="newsTmp" data="{{...item}}"></template>
-
+    <view catchtap="toListdetail" data-index="{{index}}">
+      <template is="newsTmp" data="{{...item}}"></template>
+    </view>
 </block>
 </view>

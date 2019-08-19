@@ -1,0 +1,46 @@
+.bigImg{
+    width:100%;
+}
+.detailTitle>image{
+    width:50rpx;
+    height:50rpx;
+    margin-left: 20rpx;
+    border-radius: 50%;
+}
+.detailTitle text{
+    margin-left: 20rpx;
+}
+.detailTitle{
+    display: flex;
+    flex-direction: row;
+    padding:10rpx 0;
+}
+.icon{
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    padding-right: 80rpx;
+}
+.iconImg1,.iconImg2{
+    width:100rpx;
+    height:100rpx;
+    border-radius:50%;
+}
+.line{
+    position: absolute;
+    width:100%;
+    border-bottom:1px solid #eee;
+    left:0;
+    top:50rpx;
+    z-index: -1;
+}
+.txt{
+    letter-spacing: 2rpx;
+    line-height: 68rpx;
+    text-indent: 36rpx;
+}
+.share{
+    float: right;
+    margin-right: 50rpx;
+    color:blue
+}

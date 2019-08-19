@@ -1,34 +1,27 @@
-/**引入外部data数据 ，模拟数据库*/
-let datas = require('../../data/list-data.js')
+/*导入数据  */
+let data=require("../../data/list-data")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    listArr:[]
-
+    nowList:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(data)
+    /*options对象默认为空对象，保存页面跳转时传给本页面的值*/
+    let index=options.index
+    /** 通过index从数据里获取对应index的数据 */
     this.setData({
-      
-       listArr:datas.list_data
+      nowList:data.list_data[index]
     })
   },
-  toListdetail(e){
-    /* e对象可以获取点击时传来的数据，包括index，我们需要index。*/
-    let index=e.currentTarget.dataset.index
-  
-    /** 页面跳转*/
-    wx.navigateTo({
-      /** 页面跳转时传递参数index。*/
-      url:"/pages/listdetail/listdetail?index="+index
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
