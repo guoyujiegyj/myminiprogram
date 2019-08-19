@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+<!--open-type="getUserInfo"可以在用户点击时出现弹框。-->
+<button style="display:{{isshow?'block':'none'}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  <image src="{{userInfo.avatarUrl}}"> </image>
+  
+  <text class="headTitle">{{userInfo.nickName}}</text>
+  <view class="welcome">
+    <text>欢迎来到我的世界</text>
+  </view>
+</view>

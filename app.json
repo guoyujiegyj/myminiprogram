@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/list/list",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f44",
+    "navigationBarTitleText": "我的世界",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

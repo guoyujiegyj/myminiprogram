@@ -1,0 +1,27 @@
+<!--引入模板-->
+<import src="/pages/template/template"></import>
+<view>
+<!--自动播放和显示指示点默认是false，不写true则是true。写true则无效果-->
+<swiper indicator-dots autoplay interval='4000' duration='500'
+    >
+    <swiper-item>
+      <image src="/images/t1.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/t2.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/t3.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/t4.png"></image>
+    </swiper-item>
+</swiper>
+<!--遍历模板-->
+<block wx:for="{{listArr}}" wx:key="{{index}}">
+
+    <!--使用模板，将数据传给模板页面-->
+    <template is="newsTmp" data="{{...item}}"></template>
+
+</block>
+</view>

@@ -1,0 +1,29 @@
+page{
+  background: #8ed145;
+}
+.container{
+    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+button{
+  background: #8ed145;
+  border: none;
+  padding:0 6rpx;
+}
+image{
+  width:200rpx;
+  height:200rpx;
+  border-radius: 50%;
+  margin:60rpx 0 140rpx 0;
+}
+/* 欢迎文本 */
+.welcome{
+  margin-top: 100rpx;
+  border: 2rpx solid #bbb;
+  padding:8rpx 6rpx;
+}

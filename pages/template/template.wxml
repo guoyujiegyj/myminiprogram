@@ -1,0 +1,22 @@
+<template name="newsTmp">
+  <view class="container">
+       <view class="title">
+       <image src="/images/headImg.jpg"></image>
+       <text>{{date}}</text>
+    </view>
+    <image src="{{detail_img}}" class="imgInfo"></image>
+    <view class="txt">
+    {{detail_content}}
+    </view>
+    <view class="bot">
+      <view class="bot-img">
+        <image src='/images/star.jpg'></image>
+        <text>{{read}}</text>
+      </view>
+      <view class="bot-see">
+        <image src='/images/see.jpg'></image>
+        <text>{{see}}</text>
+      </view>
+    </view>
+  </view>
+</template> 
