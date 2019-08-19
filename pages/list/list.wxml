@@ -2,19 +2,20 @@
 <import src="/pages/template/template"></import>
 <view>
 <!--自动播放和显示指示点默认是false，不写true则是true。写true则无效果-->
-<swiper indicator-dots autoplay interval='4000' duration='500'
+<swiper catchtap="lbToDetail" indicator-dots autoplay interval='4000' duration='500'
     >
     <swiper-item>
-      <image src="/images/t1.png"></image>
+      <!--data-index用来传递当前item的索引-->
+      <image data-index="0" src="/images/t1.png"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/t2.png"></image>
+      <image data-index="1" src="/images/t2.png"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/t3.png"></image>
+      <image data-index="2" src="/images/t3.png"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/t4.png"></image>
+      <image data-index="3" src="/images/t4.png"></image>
     </swiper-item>
 </swiper>
 <!--遍历模板-->

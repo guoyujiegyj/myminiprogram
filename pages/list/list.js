@@ -19,6 +19,13 @@ Page({
        listArr:datas.list_data
     })
   },
+  /* 轮播图的点击事件 */
+  lbToDetail(e){
+    let index=e.target.dataset.index
+    wx.navigateTo({
+      url:"/pages/listdetail/listdetail?index="+index
+    })
+  },
   toListdetail(e){
     /* e对象可以获取点击时传来的数据，包括index，我们需要index。*/
     let index=e.currentTarget.dataset.index

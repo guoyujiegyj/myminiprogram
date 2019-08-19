@@ -13,7 +13,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(data)
     /*options对象默认为空对象，保存页面跳转时传给本页面的值*/
     let index=options.index
     /** 通过index从数据里获取对应index的数据 */

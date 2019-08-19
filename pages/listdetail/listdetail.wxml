@@ -1,11 +1,11 @@
 <view>
-  <image class="bigImg" src='/images/t1.png'>
+  <image class="bigImg" src='{{nowList.detail_img}}'>
   </image>
   <view class= "detailTitle">
     <image src="/images/headImg.jpg"></image>
-    <text class="titleName">jQuery</text>
+    <text class="titleName">{{nowList.title}}</text>
     <text class="">发布于</text>
-    <text class="titleDate">may 23 2017</text>
+    <text class="titleDate">{{nowList.date}}</text>
   </view>
   <view class="icon">
     <image class="iconImg1" src="/images/icon_API.png"></image>
@@ -13,7 +13,7 @@
     <view class="line"></view>
   </view>
   <view class="txt">
-    加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉加长款酸辣粉
+    {{nowList.detail_content}}
   </view>
   <text class="share">转发...</text>
 </view>
