@@ -44,3 +44,15 @@
     margin-right: 50rpx;
     color:blue
 }
+.imgBox{
+    position: relative;
+}
+.imgBox>.musicIcon{
+    position:absolute;
+    width:100rpx;
+    height:100rpx;
+     left:50%;
+    top:50%;
+    margin-left:-50rpx;
+    margin-top:-50rpx;
+}

@@ -7,9 +7,10 @@ Page({
    */
   data: {
     nowList:{},
-    /* 收藏icon的表示*/
+    /* 收藏icon的标识*/
     isSelected:false,
-    index:null
+    index:null,
+    isMusic:false
   },
 
   /**
@@ -29,6 +30,7 @@ Page({
     if(!detailStorage){
       wx.setStorageSync('isSelected',{})
     }
+    //如果页面刚加载时，index对应的项有缓存，则设置其状态。
     if(detailStorage[index]){
       this.setData({
         isSelected:true
@@ -53,9 +55,11 @@ Page({
     let {index}=this.data
     wx.getStorage({
       key:'isSelected',
-      data:'',
       success:(data)=>{
+        //获得缓存数据
         let obj=data.data
+        console.log(obj)
+        //修改当前index对应的状态
         obj[index]=isSelected
         wx.setStorage({
           key:'isSelected',
@@ -63,8 +67,18 @@ Page({
         })
       }
     })
+    
+
+  },
 
 
+  //音乐播放处理函数
+  musicHandle(){
+    //获得数据里的isMusic状态，将其改变
+    let isMusic=!this.data.isMusic
+    this.setData({
+      isMusic
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
