@@ -1,0 +1,29 @@
+.movieContainer{
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+.movieImg{
+    width:160rpx;
+    height:160rpx;
+    margin:16rpx 20rpx;
+}
+.movieTitle{
+    display: flex;
+    flex-direction: column;
+    width:65%;
+}
+.movieTitle>text{
+    line-height: 60rpx;
+
+}
+.score{
+    line-height:180rpx;
+    color:red;
+    font-size: 38rpx;
+    font-weight: 500;
+}
+.movieName{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
