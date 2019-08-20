@@ -21,7 +21,7 @@
     justify-content: flex-end;
     padding-right: 80rpx;
 }
-.iconImg1,.iconImg2{
+.icon>image{
     width:100rpx;
     height:100rpx;
     border-radius:50%;

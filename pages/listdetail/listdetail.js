@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    nowList:{}
+    nowList:{},
+    /* 收藏icon的表示*/
+    isSelected:true
   },
 
   /**
@@ -20,7 +22,14 @@ Page({
       nowList:data.list_data[index]
     })
   },
+  //收藏icon点击时的处理函数。
+  iconHandle(){
+    let isSelected=!this.data.isSelected
+    this.setData({
+      isSelected:isSelected
+    })
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
