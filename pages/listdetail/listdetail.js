@@ -8,7 +8,8 @@ Page({
   data: {
     nowList:{},
     /* 收藏icon的表示*/
-    isSelected:true
+    isSelected:false,
+    index:null
   },
 
   /**
@@ -19,8 +20,20 @@ Page({
     let index=options.index
     /** 通过index从数据里获取对应index的数据 */
     this.setData({
-      nowList:data.list_data[index]
+      nowList:data.list_data[index],
+      index
     })
+    //页面加载时判断是否有收藏icon的缓存
+    let detailStorage=wx.getStorageSync('isSelected')
+    //如果没有，设置isSelected为空
+    if(!detailStorage){
+      wx.setStorageSync('isSelected',{})
+    }
+    if(detailStorage[index]){
+      this.setData({
+        isSelected:true
+      })
+    }
   },
   //收藏icon点击时的处理函数。
   iconHandle(){
@@ -29,11 +42,29 @@ Page({
       isSelected:isSelected
     })
     /* 收藏成功图标提示*/
-    let title=isSelected==true?'取消收藏':'收藏成功'  
+    let title=isSelected==true?'收藏成功':'取消收藏'  
     wx.showToast({
       title,
       icon:'success'
     }) 
+    /* 将缓存数据保存在本地存储 */
+
+    /**解构赋值，将data的index赋给变量index */
+    let {index}=this.data
+    wx.getStorage({
+      key:'isSelected',
+      data:'',
+      success:(data)=>{
+        let obj=data.data
+        obj[index]=isSelected
+        wx.setStorage({
+          key:'isSelected',
+          data:obj
+        })
+      }
+    })
+
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

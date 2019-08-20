@@ -8,8 +8,8 @@
     <text class="titleDate">{{nowList.date}}</text>
   </view>
   <view class="icon">
-    <image catchtap="iconHandle" wx:if="{{!isSelected}}" src="/images/icon_API_active.png"></image>
-    <image catchtap="iconHandle" wx:if="{{isSelected}}" src="/images/icon_API.png"></image>
+    <image catchtap="iconHandle" wx:if="{{isSelected}}" src="/images/icon_API_active.png"></image>
+    <image catchtap="iconHandle" wx:if="{{!isSelected}}" src="/images/icon_API.png"></image>
     <image  src="/images/icon_component_active.png"></image>
     <view class="line"></view>
   </view>
