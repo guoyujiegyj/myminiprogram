@@ -22,5 +22,5 @@
   <view class="txt">
     {{nowList.detail_content}}
   </view>
-  <text class="share">转发...</text>
+  <button open-type="share">转发...</button>
 </view>
