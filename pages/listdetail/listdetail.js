@@ -79,6 +79,19 @@ Page({
     this.setData({
       isMusic
     })
+    if(isMusic){
+      //获得当前index
+      let {index}=this.data
+      //获得当前音乐路径
+      let musicUrl=data.list_data[index].musicUrl
+
+      wx.playBackgroundAudio({
+        dataUrl:musicUrl
+      })
+    }else{
+      wx.pauseBackgroundAudio()
+    }
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
