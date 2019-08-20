@@ -28,7 +28,12 @@ Page({
     this.setData({
       isSelected:isSelected
     })
-
+    /* 收藏成功图标提示*/
+    let title=isSelected==true?'取消收藏':'收藏成功'  
+    wx.showToast({
+      title,
+      icon:'success'
+    }) 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
