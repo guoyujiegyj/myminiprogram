@@ -1,5 +1,6 @@
 <view>
   <view class="imgBox">
+    <!--顶部大图和暂停播放图片-->
     <image class="bigImg" src='{{nowList.detail_img}}'></image>
     <image catchtap="musicHandle" class="musicIcon" wx:if="{{!isMusic}}" src="/images/start.png"></image>
     <image catchtap="musicHandle" class="musicIcon" wx:if="{{isMusic}}" src="/images/stop.png"></image>
@@ -11,9 +12,10 @@
     <text class="titleDate">{{nowList.date}}</text>
   </view>
   <view class="icon">
+    <!--收藏图片和分享图片-->
     <image catchtap="iconHandle" wx:if="{{isSelected}}" src="/images/icon_API_active.png"></image>
     <image catchtap="iconHandle" wx:if="{{!isSelected}}" src="/images/icon_API.png"></image>
-    <image  src="/images/icon_component_active.png"></image>
+    <image catchtap="shareHandle" src="/images/icon_component_active.png"></image>
     <view class="line"></view>
   
   </view>
