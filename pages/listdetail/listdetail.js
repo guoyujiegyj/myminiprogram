@@ -1,10 +1,9 @@
 /*导入数据  */
 let data=require("../../data/list-data")
-Page({
+//获取全局app实例
+const appInstance = getApp()
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
     nowList:{},
     /* 收藏icon的标识*/
@@ -17,6 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(appInstance)
     /*options对象默认为空对象，保存页面跳转时传给本页面的值*/
     let index=options.index
     /** 通过index从数据里获取对应index的数据 */
@@ -24,6 +24,7 @@ Page({
       nowList:data.list_data[index],
       index
     })
+
     //页面加载时判断是否有收藏icon的缓存
     let detailStorage=wx.getStorageSync('isSelected')
     //如果没有，设置isSelected为空
@@ -36,7 +37,34 @@ Page({
         isSelected:true
       })
     }
+    //页面再次进入时，判断音乐是否在播放
+    if(appInstance.musicData.isPlay==true && appInstance.musicData.pageIndex==this.data.index){
+      //如果正在播放，则修改isMusic的状态，以便让切换正确的图标。 
+      this.setData({
+         isMusic:true
+       }) 
+    }
+    //监听音乐播放函数
+    wx.onBackgroundAudioPlay(()=>{
+      
+      this.setData({
+        isMusic:true
+        
+      })
+      //修改app.js里的值。
+      appInstance.musicData.isPlay=true
+      appInstance.musicData.pageIndex=this.data.index
+    })
+    //监听音乐暂停函数
+    wx.onBackgroundAudioPause(()=>{
+      this.setData({
+        isMusic:false
+      })
+      //修改app.js里的值。
+      appInstance.musicData.isPlay=false
+    })  
   },
+
   //收藏icon点击时的处理函数。
   iconHandle(){
     let isSelected=!this.data.isSelected
@@ -67,7 +95,6 @@ Page({
         })
       }
     })
-    
 
   },
 
@@ -82,17 +109,20 @@ Page({
     if(isMusic){
       //获得当前index
       let {index}=this.data
+      let {title}=this.data.nowList
       //获得当前音乐路径
       let musicUrl=data.list_data[index].musicUrl
 
       wx.playBackgroundAudio({
-        dataUrl:musicUrl
+        dataUrl:musicUrl,
+        title
       })
     }else{
       wx.pauseBackgroundAudio()
     }
-    
   },
+
+       
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
