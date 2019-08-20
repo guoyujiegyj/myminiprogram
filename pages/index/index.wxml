@@ -6,6 +6,6 @@
   
   <text class="headTitle">{{userInfo.nickName}}</text>
   <view class="welcome">
-    <text>欢迎来到我的世界</text>
+    <text catchtap="directTo">欢迎来到我的世界</text>
   </view>
 </view>

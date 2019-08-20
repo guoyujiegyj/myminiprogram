@@ -1,18 +1,23 @@
-// pages/moreDetail/moreDetail.js
+const movieList=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    nowMovie:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //获得页面跳转时传来的index
+    let index =options.index
+    this.setData({
+      //修改当前页面的数据
+      nowMovie:movieList.movieList[index]
+    })
   },
 
   /**

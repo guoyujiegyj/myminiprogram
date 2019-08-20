@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/list/list",
     "pages/moreDetail/moreDetail",
     "pages/more/more",
-    "pages/list/list",
-    "pages/index/index",
     "pages/listdetail/listdetail"
   ],
   "window": {

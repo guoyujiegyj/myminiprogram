@@ -1,1 +1,23 @@
-/* pages/moreDetail/moreDetail.wxss */
+.movieDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.movieImg{
+    width:70%;
+    height:700rpx;
+    margin:0 auto;
+    margin-top:20rpx;
+}
+.movieTitle{
+    display: flex;
+    flex-direction: column;
+}
+.movieTitle>text{
+    line-height:50rpx;
+    margin-left:160rpx;
+}
+button{
+    width:70%;
+    margin-top:20rpx;
+}

@@ -1,2 +1,10 @@
-<!--pages/moreDetail/moreDetail.wxml-->
-<text>pages/moreDetail/moreDetail.wxml</text>
+<view class="movieDetail">
+    <image class="movieImg" src="{{nowMovie.images.large}}">
+    </image>
+    <view class="movieTitle">
+        <text>评分：{{nowMovie.rating.average}}</text>
+        <text>导演：{{nowMovie.directors[0].name}}</text>
+        <text wx:for="{{nowMovie.casts}}" wx:key="{{index}}">主演：{{item.name}}</text>
+    </view>
+    <button type="primary">我要观影</button>
+</view>

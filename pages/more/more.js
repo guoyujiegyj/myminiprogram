@@ -1,4 +1,4 @@
-// pages/more/more.js
+const movieData=getApp()
 Page({
 
   /**
@@ -18,6 +18,9 @@ Page({
         this.setData({
           movieList:res.data.subjects
         })
+        //将电影数据赋给app.js里,以便让moreDetail页面使用。
+        movieData.movieList=this.data.movieList
+        console.log(movieData)
       }
     })
   },

@@ -4,5 +4,7 @@ App({
   musicData:{
     isPlay:false,
     pageIndex:""
-  }
+  },
+  //电影的数据
+  movieList:{}
 })

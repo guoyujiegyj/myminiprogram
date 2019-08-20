@@ -1,4 +1,5 @@
-<view wx:for="{{movieList}}" wx:key="{{index}}">
+<!--跳转到moreDetail页面，将index传过去-->
+<navigator wx:for="{{movieList}}" wx:key="{{index}}" url="../moreDetail/moreDetail?index={{index}}">
     <view class="movieContainer">
         <image class="movieImg" src="{{item.images.large}}"></image>
         <view class='movieTitle'>
@@ -8,4 +9,4 @@
         </view>
         <text class="score">{{item.rating.average}}</text>
     </view>
- </view>
+</navigator>

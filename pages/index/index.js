@@ -45,5 +45,10 @@ Page({
       }
     })
   },
-
+  //跳转
+  directTo(){
+    wx.switchTab({
+      url: '/pages/list/list'
+    })
+  }
 })
